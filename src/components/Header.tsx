@@ -6,16 +6,24 @@ import "../styles/header.scss";
 export function Header({
   hasBackground,
   isMobile,
+  hidden,
 }: {
   hasBackground: boolean;
   isMobile: boolean;
+  hidden: boolean;
 }) {
   const { t } = useLocales();
   const scrollSection = useScrollSections();
 
   return (
-    <ul className="header header-background">
-      <img src="four-e-white.svg" alt="website logo" height={32} />
+    <ul
+      className={`header${
+        !isMobile || hasBackground ? " header-background" : ""
+      }`}
+    >
+      <li>
+        <img src="four-e-white.svg" alt="website logo" height={32} />
+      </li>
       {!isMobile ? (
         <li className="menu">
           <ul>

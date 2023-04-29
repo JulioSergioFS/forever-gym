@@ -1,11 +1,11 @@
 import { AboutMe } from "../sections/AboutMe";
 import { Contact } from "../sections/Contact";
-import { First } from "../sections/First";
+import { Home } from "../sections/Home";
 import { Plans } from "../sections/Plans";
 import { Testimonials } from "../sections/Testimonials";
 
 export const sections = [
-  { id: "1", name: "Home", component: <First />, bgColor: "primary" },
+  { id: "1", name: "Home", component: <Home />, bgColor: "primary" },
   {
     id: "2",
     name: "About Us",

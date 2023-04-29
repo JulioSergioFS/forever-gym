@@ -9,7 +9,9 @@ export function TestimonialCard({
   person: {
     name: string;
     link: string;
+    text: string;
     photo: string;
+    alt: string;
   };
   index: number;
 }) {
@@ -27,23 +29,10 @@ export function TestimonialCard({
       }}
     >
       <div className="testimonials_item_content">
-        <p className="text description">
-          "{t(`sections.testimonials.list.${person.name}.text`)}"
-        </p>
+        <p className="text description">{person.text}</p>
         <div className="profile">
-          <img
-            className="logo"
-            src={person.photo}
-            alt={
-              t("sections.testimonials.alt") +
-              t(`sections.testimonials.list.${person.name}.fullName`)
-            }
-          />
-          <div className="info">
-            <p className="name">
-              {t(`sections.testimonials.list.${person.name}.fullName`)}
-            </p>
-          </div>
+          <img className="logo" src={person.photo} alt={person.alt} />
+          <p className="name">{person.name}</p>
         </div>
       </div>
     </AnimateComponent>

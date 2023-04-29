@@ -53,6 +53,10 @@ button {
 .button-secondary {
   background-color: $light-text-color;
   color: $primary-color;
+
+  &:hover {
+    background-color: #edcdff;
+  }
 }
 
 #root {
@@ -130,14 +134,14 @@ button {
 }
 
 .text-highlight {
-  color: $highlight-text-color;
+  color: $primary-color;
   font-size: 1.4rem !important;
   font-weight: bold;
 }
 
 .redirect-link {
   cursor: pointer;
-  color: $highlight-text-color;
+  color: $primary-color;
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: bold;

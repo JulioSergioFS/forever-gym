@@ -1,5 +1,5 @@
 import { AnimateComponent } from "../components/AnimateComponent";
-import { projects } from "../constants/project";
+import { plans } from "../constants/plans";
 import useLocales from "../hooks/useLocales";
 import "../styles/sections/plans.scss";
 
@@ -32,20 +32,19 @@ export function Plans({ isMobile }: { isMobile?: boolean }) {
         }}
       >
         <div className="plans">
-          {projects.map((project) => (
-            <div className="card" key={project.smallName}>
+          {plans.map((plans, index) => (
+            <div className="card" key={index}>
               <div className="company-text">
                 <img
                   className="logo"
-                  src={project.image}
-                  alt={t(
-                    `sections.portfolio.description.${project.smallName}.name`
-                  )}
+                  src={plans.image}
+                  alt={`${plans.title} logo`}
                 />
-                <h6>{project.title}</h6>
-                <h3>R${project.price}</h3>
-                <p className="carousel-description">{project.text}</p>
+                <h6 className="name">{plans.title}</h6>
+                <h6 className="price">${plans.price}</h6>
+                <p className="carousel-description">{plans.text}</p>
               </div>
+              <p className="redirect-link">Join In</p>
             </div>
           ))}
         </div>

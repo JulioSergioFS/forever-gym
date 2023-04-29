@@ -46,7 +46,11 @@ function App() {
     <MotionLazyContainer>
       <ScrollingProvider scrollBehavior="smooth">
         <div className="app">
-          <Header hasBackground={hasBackground} isMobile={isMobile} />
+          <Header
+            hidden={hidden}
+            hasBackground={hasBackground}
+            isMobile={isMobile}
+          />
           <Section id="1">
             <section className="section home-section">
               <m.div

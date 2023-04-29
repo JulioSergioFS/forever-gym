@@ -1,26 +1,50 @@
-import keyboardArrowDownRounded from "@iconify/icons-material-symbols/keyboard-arrow-down-rounded";
-import { Icon } from "@iconify/react";
 import { useScrollSection } from "react-scroll-section";
-import { sections } from "../constants/header";
-import useLocales from "../hooks/useLocales";
+import { AnimateComponent } from "../components/AnimateComponent";
 import "../styles/sections/home.scss";
 
 export function Home({ hidden }: { hidden?: boolean }) {
-  const { t } = useLocales();
-  const section2 = useScrollSection(sections[1].id);
+  const goToPlans = useScrollSection("3");
 
   return (
-    <div className={`home content${hidden ? " hidden" : ""}`}>
-      <div className="info">
-        <h2>{t("sections.home.title")}</h2>
-        <p className="text text-highlight">{t("sections.home.subtitle")}</p>
+    <div className={`content home${hidden ? " hidden" : ""}`}>
+      <div className="text">
+        <AnimateComponent
+          variants={{
+            visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+          }}
+        >
+          <div className="text-content">
+            <h2 className="text-content_title">
+              <p>#</p>
+              <div>
+                4EVER
+                <br />
+                LEARN
+              </div>
+            </h2>
+            <p className="text-content_subtitle">
+              Join us and discover a whole new carreer
+            </p>
+            <button
+              type="button"
+              className="button-secondary"
+              onClick={() => goToPlans.onClick()}
+            >
+              Learn with us!
+            </button>
+          </div>
+        </AnimateComponent>
       </div>
-      <Icon
-        icon={keyboardArrowDownRounded}
-        height={40}
-        className="down-arrow"
-        onClick={section2.onClick}
-      />
+
+      <div className="photo-container">
+        <div className="gradient">
+          <img
+            className="first-photo"
+            src="images/landing.jpg"
+            alt="Person using their phone (photo by Ketut Subiyanto: https://www.pexels.com/photo/melancholic-black-man-with-smartphone-listening-to-music-in-earphones-4559978/)"
+          />
+        </div>
+      </div>
     </div>
   );
 }

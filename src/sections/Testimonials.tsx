@@ -15,7 +15,7 @@ export function Testimonials({ isMobile }: { isMobile?: boolean }) {
           visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
         }}
       >
-        <h2 className="title">{t("sections.testimonials.title")}</h2>
+        <h2 className="title">Testimonials</h2>
       </AnimateComponent>
 
       {isMobile ? (
@@ -36,6 +36,7 @@ export function Testimonials({ isMobile }: { isMobile?: boolean }) {
             infiniteLoop
             showThumbs={false}
             showStatus={false}
+            showArrows={false}
             interval={4000}
           >
             {testimonials.map((person, index) => (
