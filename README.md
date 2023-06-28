@@ -1,2 +1,2 @@
 # forever-gym
-A online course company landing page
+An online course company landing page
